@@ -1,0 +1,14 @@
+/* pages/use/use.wxss */
+
+.wh_120 {
+  width: 50rpx!important;
+  height: 50rpx!important;
+}
+
+.c_4a {
+  color: #4ab134;
+}
+
+.f_28 {
+  font-size: 28rpx;
+}

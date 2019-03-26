@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的押金",
+  "usingComponents": {
+    "popup": "../../components/popup/index"
+  }
+}

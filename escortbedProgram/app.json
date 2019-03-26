@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/use/use",
+    "pages/detail/detail",
+    "pages/login/login",
+    "pages/help/help",
+    "pages/feedback/feedback",
+    "pages/about/about",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/pledge/pledge"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "领歌云康",
+    "navigationBarTextStyle": "black"
+  }
+}

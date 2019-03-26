@@ -1,0 +1,75 @@
+<!--pages/use/use.wxml-->
+<view class="main">
+  <view class="state" wx:if="{{orderInfo.oStatus == 1}}">订单已结束</view>
+  <view style="margin-bottom:140rpx">
+    <image src="../../images/top.png" mode="widthFix"></image>
+    <view class="title-gray">使用时长</view>
+    <view class="clock {{orderInfo.oStatus == 0 ? '' : 'gray'}}">
+      <view class="border">{{hours[0]}}</view>
+      <view class="border">{{hours[1]}}</view>
+      <view>:</view>
+      <view class="border">{{minutes[0]}}</view>
+      <view class="border">{{minutes[1]}}</view>
+      <view>:</view>
+      <view class="border">{{seconds[0]}}</view>
+      <view class="border">{{seconds[1]}}</view>
+    </view>
+    <view class="use-info {{orderInfo.oStatus == 0 ? '' : 'gray'}}">
+      <view>开始时间：{{orderInfo.startTime}}</view>
+      <view wx:if="{{orderInfo.oStatus == 1}}">结束时间：{{orderInfo.endTime}}</view>
+    </view>
+     <view class="use-info {{orderInfo.oStatus == 0 ? '' : 'gray'}}">
+      <view>消费金额：￥<text class="orange"><text class="font-big">{{orderInfo.payMoney || 0}}</text>元</text></view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class="btn-gray">设备编号：{{orderInfo.deviceNum}}</view>
+  <view class="menu">
+  <view class='center'  bindtap="toFeedback">
+       <image class=" wh_120"  src="../../images/nav/feedback.png" mode="widthFix"></image>
+       <view class='f_28 c_4a'>问题反馈</view>
+  </view>
+ 
+ <view>
+     <image class="btn-main" src="../../images/lock.gif" mode="widthFix" bindtap="closeLock" wx:if="{{orderInfo.oStatus == 0}}"></image>
+    <image class="btn-main" src="../../images/pay.gif" mode="widthFix" bindtap="toPay" wx:if="{{orderInfo.oStatus == 1}}"></image>
+ </view>
+
+<view  class='center' bindtap="toMine">
+    <image class=" wh_120"  src="../../images/nav/mine.png" mode="widthFix" ></image>
+       <view class='f_28 c_4a'>个人中心</view>
+</view>
+
+  </view>
+  <view class="info" wx:if="{{orderInfo.oStatus == 0}}">确认上锁 结束使用</view>
+  <view class="info" wx:if="{{orderInfo.oStatus == 1}}">立即支付</view>
+  <view class="explain">
+    <view class="explain-title green">重要提示：</view>
+    <view class="explain-content">结束使用时请先将床收回并确认关好门锁，再点击结束使用按钮，结束计费。</view>
+  </view>
+  <view class="round-w">
+    <view class="round"></view>
+  </view>
+</view>
+
+<popup show="{{ !bluetoothState }}">
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/bluetooth.png" mode="widthFix"></image>
+    <view class="pop-content">使用前请打开蓝牙！</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="checkBluetooth">确定</view>
+    </view>
+  </view>
+</popup>
+
+<popup show="{{ openSuccessFlag }}" bindtap="openSuccessCheckOrder">
+  <view class="pop-container">
+   <view class="title">温馨提示</view>
+    <view class="pop-content">结束使用时，请靠近陪护床，务必
+在订单页面手动结束订单终止计费。</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="openSuccessCheckOrder">确定</view>
+    </view>
+  </view>
+</popup>

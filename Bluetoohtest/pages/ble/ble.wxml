@@ -1,0 +1,36 @@
+<view wx:if="{{funk}}" class='fd '>
+</view>
+
+<view class='btn-w'>
+  <label class='f_18 pr_top15'>开锁力度:</label>
+  <input name="UnlockTime" bindinput="uTime" type='number' class='pop-input' placeholder="请输入开锁力度" />
+</view>
+
+<view class='btn-w'>
+  <label class='f_18 pr_top15'>开锁时间:</label>
+  <input name="closeUnlockTime" bindinput='cTime' type='number' class='pop-input' placeholder="请输入时间的高位" />
+</view>
+
+<view class='btn-w'>
+  <label class='f_18 pr_top15'>关锁时间:</label>
+  <input name="Unlock" type='number' bindinput='lTime' class='pop-input' placeholder="请输入时间的低位" />
+</view>
+<button bindtap='submits' class='pop-btn-primary pop-btn-single'>开锁</button>
+
+<button bindtap='coles' class='pop-btn-primary pop-btn-single pt20'>关锁</button>
+<button bindtap='continuity' class='pop-btn-primary pop-btn-single pt20'>连续开锁</button>
+<button bindtap='stops' class='pop-btn-primary pop-btn-single pt20'>测试关锁</button>
+<!-- // <button bindtap='coletap' class='pop-btn-primary pop-btn-single'>关锁</button> -->
+
+<view>
+  <view class='btn-w pr_top30'>
+    <label class='f_18 pr_top15'>mac地址:</label>
+    <input name="mac" class='pop-input' adjust-position="true" bindinput="ip_val" placeholder="请输入mac地址" />
+  </view>
+  <view class="bthmg pop-btn-primary pop-btn-single" bindtap="blelianjie">蓝牙连接设备</view>
+</view>
+
+<view>
+  <view>正转次数：{{just}}次</view>
+  <view>反转次数：{{negative}}次</view>
+</view>

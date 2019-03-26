@@ -1,0 +1,7 @@
+<view class="{{show==false ?'pop':'pop__mask '}} " >
+
+<view  bindclickmask="handleMaskClick">
+    <slot> </slot>
+</view>
+
+</view>

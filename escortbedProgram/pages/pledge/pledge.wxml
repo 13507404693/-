@@ -1,0 +1,63 @@
+<!--pages/pledge/pledge.wxml-->
+<view class="card">
+  <view class="title">当前押金金额：</view>
+  <view class="money"><text>{{dataInfo.deposit}}</text>元</view>
+  <view class="btn-animation btn" bindtap="refund" wx:if="{{dataInfo.deposit>0}}" >退款</view>
+  <view class="btn-animation btn" style='background: #c5c8ce;color:#666;'   wx:else>退款</view>
+
+  <view class="pledge-explain" bindtap="togglePledgeDialog">押金说明</view>
+</view>
+<view class="record-title">押金记录</view>
+<view class="record">
+  <view class="item" wx:if="{{ dataInfo.list.length > 0 }}" wx:for="{{ dataInfo.list }}" wx:key="index">
+    <view class="date">{{item.create_time}}</view>
+    <view class="describe">押金<text wx:if="{{item.pay_type == 2}}">充值</text><text wx:if="{{item.pay_type == 3}}">退款</text>{{item.money}}元</view>
+  </view>
+  <view class="no-data" wx:if="{{ dataInfo.list.length == 0 }}">暂无数据</view>
+</view>
+
+<popup
+  show="{{ pledgeDialog }}"
+  bindclose="togglePledgeDialog"
+>
+  <view class="pop-container">
+    <view class="title">押金说明</view>
+    <view class="pop-content pop-p">1.押金在您使用并支付完成选择退款后将会自动原路退回，实时到账。</view>
+    <view class="pop-content pop-p">2.如果由于网络等异常原因导致自动退款失败，您可以点击手动点击退款。</view>
+    <view class="pop-content pop-p">3.您的押金我们将单独进行严格管理100%确保资金安全。</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="togglePledgeDialog">确定</view>
+    </view>
+  </view>
+</popup>
+
+
+<popup
+  show="{{ pledgeSure }}"
+  bindclose="togglePledgeDialog"
+>
+  <view class="pop-container">
+  <view > 
+      <image class="popup-icon"  src="{{contentarry_img}}" mode="widthFix"></image>
+      <view class="pop-content pop-p">{{contentarry_text}}</view>
+  </view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="toggSure">确定</view>
+    </view>
+  </view>
+</popup>
+
+
+<popup
+  show="{{ unbindDialog }}"
+  bindclose="toggleUnbindDialog"
+>
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/refund.png" mode="widthFix"></image>
+    <view class="pop-content">是否退款押金？</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary" bindtap="unbind">确定</view>
+      <view class="pop-btn-plan" bindtap="toggleUnbindDialog">取消</view>
+    </view>
+  </view>
+</popup>

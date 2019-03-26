@@ -1,0 +1,30 @@
+ /* pages/help/help.wxss */
+.title{
+  padding: 30rpx 0;
+}
+.title image{
+  display: block;
+  height: 110rpx;
+  margin: auto;
+}
+.section{
+  margin: 24rpx;
+  font-size: 26rpx;
+  color: #666;
+  text-indent: 2em;
+}
+.side-title{
+  font-size: 30rpx;
+  color: #4ab134;
+  margin: 24rpx;
+}
+.content-image{
+  display: block;
+  width: 100%;
+}
+.answer{
+  margin: 30rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+p{margin:24rpx;font-size:28rpx;}

@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/ble_auto_runner/ble_auto_runner",
+    "pages/ble/ble",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

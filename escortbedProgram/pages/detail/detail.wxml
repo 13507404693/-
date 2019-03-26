@@ -1,0 +1,110 @@
+<!--pages/detail/detail.wxml-->
+<view class="main">
+  <view class='center'>
+    <image src="../../images/Charginginstruction.png" class='w129h38'></image>
+  </view>
+
+  <view>
+    <view class='f_32 pd22'>
+      <view wx:if="{{deviceInfo.deposit > 0}}">
+        <view> 1、使用前您需先缴纳押金：
+          <label class='c_e58'>
+            <label>￥</label>
+            <label class='  f_48'>{{deviceInfo.deposit}}</label>
+            <label>元</label>
+          </label>
+        </view>
+        <view class='pdleft50_top20'> 当您结束使用时押金会原路自动退回</view>
+      </view>
+
+      <view class='pd_top20'>
+
+        <view class='pdleft50_top20' wx:if="{{deviceInfo.deposit <= 0}}">按小时计费，不足1小时按1小时计算，开锁后5</view>
+        <view wx:else>2、按小时计费，不足1小时按1小时计算，开锁后5</view>
+        <view class='pdleft50_top20'>分钟内免费。每天消费总金额不超过{{deviceInfo.deposit}}元。
+          <view>
+          每小时费用：
+          <label class='c_e58'>
+            <label>￥</label>
+            <label class=' f_48'>{{deviceInfo.price}}</label>
+            <label>元</label>
+          </label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='right'>
+  <image class='w309h230' src="../../images/Starrysky.png"></image>
+</view>
+<view class="content">
+  <view class="btn-gray" bindtap="closeBluetoothAdapter">设备编号：{{deviceInfo.deviceNum}}</view>
+  <view class="menu">
+    <view bindtap="toFeedback">
+      <view class='center'>
+        <image class="feedback" class='wh_120' src="../../images/nav/feedback.png" mode="widthFix"></image>
+      </view>
+      <view class='f_28 c_4a'>问题反馈</view>
+    </view>
+    <view bindtap="openLock" >
+      <image class="btn-main" src="../../images/unlock.gif" mode="widthFix"></image>
+    </view>
+    <view bindtap="toMine">
+      <view class='center'>
+        <image class="mine" class='wh_120' src="../../images/nav/mine.png" mode="widthFix"></image>
+      </view>
+      <view class='f_28 c_4a'>个人中心</view>
+    </view>
+
+  </view>
+  <view class="info">开锁使用</view>
+  <view class="rules">您开锁使用即表示同意
+    <text class="green">《深圳市领歌云康陪护服务条款》</text>
+  </view>
+  <view class="explain">
+    <view class="explain-title green ex_pdbtm5">使用时间段说明：</view>
+    <view class="explain-content line18">为配合医院的管理，陪护床的使用时间段为：
+      <text class="green">18:00-8:00、12:00-14:00</text> 请您配合医院管理在非使用时间段内把床及时收回并锁好同时回到微信内结束使用。</view>
+  </view>
+  <view class="round-w">
+    <view class="round"></view>
+  </view>
+</view>
+
+
+<popup show="{{ cashState }}">
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/deposit.png" mode="widthFix"></image>
+    <view class="pop-content">使用前请先支付押金：
+      <text class="orange"><text class="font-big">{{deviceInfo.deposit}}</text>元</text>
+    </view>
+    <view class="pop-content">您结束使用后押金将原路退回，实时到账</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="payDeposit">确定</view>
+    </view>
+  </view>
+</popup>
+
+<popup show="{{ !bluetoothState }}">
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/bluetooth.png" mode="widthFix"></image>
+    <view class="pop-content">使用前请打开蓝牙！</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="checkBluetooth">确定</view>
+    </view>
+  </view>
+</popup>
+
+<!-- 警告提示框 -->
+<popup show="{{ alertDialog }}" bindclose="toggleAlertDialog">
+  <view class="pop-container">
+
+    <view class="title" wx:if="{{!alertIcon}}">温馨提示</view>
+    <view class="pop-content">{{alertText}}</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="toggleAlertDialog">确定</view>
+    </view>
+  </view>
+</popup>

@@ -1,0 +1,28 @@
+<!--pages/about/about.wxml-->
+<view class="banner-w">
+  <view class="banner">
+    <image src="../../images/about.png" mode="widthFix"></image>
+  </view>
+</view>
+<view class="cells">
+  <view class="cell">
+    <view class="cell-hd">微信公众号：</view>
+    <view class="cell-bd">领歌云康</view>
+  </view>
+  <view class="cell">
+    <view class="cell-hd">联系电话：</view>
+    <view class="cell-bd">400-0029-800</view>
+  </view>
+  <view class="cell">
+    <view class="cell-hd">电子邮件：</view>
+    <view class="cell-bd">Service@leagoohealth.com</view>
+  </view>
+  <view class="cell">
+    <view class="cell-hd">网址：</view>
+    <view class="cell-bd">www.leagoohealth.com</view>
+  </view>
+</view>
+<view class="footer">
+  <view>深圳市领歌云康科技有限公司</view>
+  <view>版权所有 copyright © 2019-Reserved </view>
+</view>

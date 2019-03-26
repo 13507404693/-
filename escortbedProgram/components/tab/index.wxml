@@ -1,0 +1,23 @@
+<!--components/tab/index.wxml-->
+<view class="tab">
+  <view class="tab-bd">
+    <template
+      is="tab-list"
+      data="{{ list, selectedId }}"
+    >
+    </template>
+  </view>
+</view>
+<slot></slot>
+
+<template name="tab-list">
+  <view class="tab-item {{ selectedId == item.id ? 'tab-item-selected' : '' }}"
+    wx:for="{{ list }}"
+    wx:key="id"
+    data-id="{{ item.id }}"
+    bindtap="handleTabChange"
+  >
+    <view class="tab-title">{{item.title}}</view>
+  </view>
+</template>
+

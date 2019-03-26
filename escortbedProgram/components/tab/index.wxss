@@ -1,0 +1,32 @@
+/* components/tab/index.wxss */
+.tab{
+  height: 80rpx;
+}
+.tab-bd{
+  height: 80rpx;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 40rpx #999;
+}
+.tab-item{
+  box-sizing:border-box;
+  overflow:hidden;
+  text-align:center;
+  margin: 0 24rpx;
+}
+.tab-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  word-break: keep-all;
+  font-size: 28rpx;
+  color:#666;
+  padding:0 20rpx;
+}
+.tab-item-selected .tab-title{
+  color: #4ab134;
+  border-bottom: 2rpx solid #4ab134;
+}

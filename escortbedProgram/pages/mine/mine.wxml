@@ -1,0 +1,75 @@
+<!--pages/mine/mine.wxml-->
+<view class="user">
+  <view class="help" bindtap="toHelp">帮助</view>
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="name">
+    <open-data type="userNickName" lang="zh_CN"></open-data>
+  </view>
+  <view class="btn-mini" bindtap="toggleUnbindDialog">解绑</view>
+</view>
+<view class="menu">
+  <view class="line">
+    <view class="item" bindtap="toOrder">
+      <image src="../../images/mine/order.png" mode="widthFix"></image>
+      <view>我的订单</view>
+    </view>
+    <view class="item" bindtap="toPledge">
+      <image src="../../images/mine/cash.png" mode="widthFix"></image>
+      <view>我的押金</view>
+    </view>
+  </view>
+  <view class="line">
+    <view class="item" bindtap="toggleServiceDialog">
+      <image src="../../images/mine/service.png" mode="widthFix"></image>
+      <view>联系客服</view>
+    </view>
+    <view class="item" bindtap="toAbout">
+      <image src="../../images/mine/about.png" mode="widthFix"></image>
+      <view>关于我们</view>
+    </view>
+  </view>
+</view>
+
+<popup
+  show="{{ serviceDialog }}"
+  bindclose="toggleServiceDialog"
+>
+  <view class="pop-container">
+    <view class="title">客服电话：400-002-9800</view>
+    <view class="pop-content">工作时间：周一至周五</view>
+    <view class="pop-content">9:00-12:00、13:30—18:00 </view>
+    <view class="btn-w">
+      <view class="pop-btn-primary" bindtap="call">拨打</view>
+      <view class="pop-btn-plan" bindtap="toggleServiceDialog">取消</view>
+    </view>
+  </view>
+</popup>
+
+<popup
+  show="{{ hasOrderDialog }}"
+  bindclose="toggleHasOrderDialog"
+>
+  <view class="pop-container">
+    <view class="title">温馨提示</view>
+    <view class="pop-content">您有未支付的订单，请先支付，然后才能进行解绑！</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary" bindtap="toggleHasOrderDialog">确定</view>
+    </view>
+  </view>
+</popup>
+
+<popup
+  show="{{ unbindDialog }}"
+  bindclose="toggleUnbindDialog"
+>
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/phone.png" mode="widthFix"></image>
+    <view class="pop-content">解除绑定手机号码？</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary" bindtap="unbind">确定</view>
+      <view class="pop-btn-plan" bindtap="toggleUnbindDialog">取消</view>
+    </view>
+  </view>
+</popup>

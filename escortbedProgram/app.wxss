@@ -1,0 +1,301 @@
+/**app.wxss**/
+.green{
+  color: #4ab134;
+}
+.orange{
+  color: #ea5810;
+}
+.font-big{
+  font-size: 32rpx;
+}
+.center{text-align:center;}
+.btn-gray{
+  width: 360rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  background: #e7e7e7;
+  color: #666666;
+  box-shadow:inset 0 2px 2px #909090;
+}
+.btn-primary{
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #4ab134;
+  border-radius: 90rpx;
+  box-shadow: 0 10rpx 20rpx 0rpx #a4d899;
+}
+.no-data{
+  font-size: 26rpx;
+  text-align: center;
+  color: #666;
+}
+/* button animation */
+.btn-animation{
+  position: relative;
+  overflow: hidden;
+}
+.btn-animation::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #dedede 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .3s, opacity .5s;
+}
+.btn-animation:active:after{
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}
+/*   --- button animation end ---   */
+/* popup */
+.pop-container{
+  width: 530rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+.pop-container .title{
+  color: #4ab134;
+  text-align: center;
+  font-size: 32rpx;
+  margin: 46rpx 0 20rpx;
+}
+.pop-container .pop-content{
+  font-size: 28rpx;
+  color: #212121;
+  text-align: center;
+}
+.pop-container .pop-input{
+  width: 430rpx;
+  background: #f2f2f2;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  height: 80rpx;
+  margin: 46rpx auto;
+}
+.pop-container .btn-w{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 36rpx 0 34rpx;
+}
+.pop-container .btn-w .pop-btn-primary.pop-btn-single{
+  width: 230rpx;
+}
+.pop-container .btn-w .pop-btn-primary{
+  width: 170rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #4ab134;
+  color: #fff;
+}
+.pop-container .btn-w .pop-btn-plan{
+  width: 170rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1rpx solid #83f769;
+  color: #4ab134;
+}
+.pop-container .popup-icon{
+  display: block;
+  width: 130rpx;
+  margin: 40rpx auto;
+}
+/*   --- popup end ---   */
+
+/* index,detail */
+.main{
+  width: 100vw;
+  position: relative;
+}
+.main image{
+  display: block;
+  width: 100vw;
+}
+.content{
+  position: relative;
+  margin-top: -180rpx;
+  padding-top: 90rpx;
+  overflow: hidden;
+}
+.content .round-w{
+  width: 100vw;
+  height: 120rpx;
+  top: 0;
+  padding-top: 90rpx;
+  overflow: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+.content .round-w .round{
+  width: 1600rpx;
+  height: 1600rpx;
+  left: 50%;
+  margin-left: -800rpx;
+  border-radius: 100%;
+  position: absolute;
+  box-shadow: 0 0 60rpx #666;
+}
+.btn-gray{
+  margin: 54rpx auto;
+}
+.content .menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.content .menu .feedback, .content .menu .mine{
+  width: 100rpx;
+  display: block;
+  padding-bottom: 50rpx;
+}
+.content .menu .btn-main{
+  width: 182rpx;
+  height:91rpx;
+  display: block;
+}
+.content .info{
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+.content .slogan{
+  display: block;
+  width: 320rpx;
+  margin: 60rpx auto 0;
+}
+.content .rules{
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  line-height: 48rpx;
+  padding-top:10px; 
+}
+.explain{
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #666;
+
+}
+
+.ex_pdbtm5{padding-bottom:5px;}
+.line18{line-height:24px;}
+
+.charge-title{
+  font-size: 30rpx;
+  margin: 25rpx;
+}
+.charge{
+  display: flex;
+  font-size: 30rpx;
+  margin: 0 25rpx;
+  color: #212121;
+  line-height: 52rpx;
+  padding-left: 20rpx;
+}
+.title-gray{
+  color: #666;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 24rpx 0;
+}
+.clock{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+.clock view{
+  font-size: 62rpx;
+  color: #4ab134;
+}
+.clock .border{
+  border: 1px solid #4ab134;
+  border-radius: 4rpx;
+  margin: 10rpx;
+  width: 42rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+}
+.clock.gray view{
+  color: #999;
+}
+.clock.gray view.border{
+  border: 1px solid #999;
+}
+.use-info{
+  color: #212121;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+  margin: 0 20rpx;
+  line-height: 52rpx;
+  position: relative;
+}
+.use-info::before{
+  content: "";
+  display: block;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 100%;
+  background: #4ab134;
+  position: absolute;
+  left: 6rpx;
+  top: 24rpx;
+}
+.use-info.gray{
+  color: #999;
+}
+.use-info.gray::before{
+  background: #999;
+}
+.use-info.orange-style::before{
+  background: #ea5810;
+}
+.state{
+  position: absolute;
+  background: #4ab134;
+  right: 0;
+  color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  padding: 0 16rpx 0 20rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  top: 226rpx;
+}
+
+/* index,detail end */
+
+.flex{display:flex}
+.flex_between{display:flex;justify-content: space-between}
+

@@ -1,0 +1,85 @@
+<!--pages/index/index.wxml-->
+<view class='pd_btn10'>
+  <swiper
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  circular="true"
+  style='height:712rpx;'
+>
+  <block wx:for="{{imgUrls}}" wx:key="unique">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="750px" height="100%" />
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view class="content">
+  <view class="btn-gray" bindtap="toggleDeviceDialog">{{deviceText}}</view>
+  <view class="menu">
+    <view class='center' style='padding:10px' bindtap="toFeedback">
+      <view>
+        <image class=" wh_120" src="../../images/nav/feedback.png" mode="widthFix" ></image>
+      </view>
+      <view class='f_28 c_4a'>问题反馈</view>
+    </view>
+
+    <view>
+      <image class="btn-main" src="../../images/scan.gif" mode="widthFix" bindtap="scan"></image>
+    </view>
+
+    <view class='center'  bindtap="toMine" style='padding:10px'>
+      <view>
+        <image class=" wh_120" src="../../images/nav/mine.png" mode="widthFix"></image>
+        <view class='f_28 c_4a'>个人中心</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="info">扫码取床</view>
+  <image class="slogan" src="../../images/slogan.png" mode="widthFix"></image>
+  <view class="round-w">
+    <view class="round"></view>
+  </view>
+</view>
+<!-- 账号限制提示 -->
+<popup show="{{ disabledState }}" bindclose="toggleDisabledState">
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/warning.png" mode="widthFix"></image>
+    <view class="pop-content">抱歉！您的帐户已被限制使用</view>
+    <view class="pop-content">如有疑问请联系客服!</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="toggleDisabledState">确定</view>
+    </view>
+  </view>
+</popup>
+<!-- 打开蓝牙提示 -->
+<popup show="{{ bluetoothState }}">
+  <view class="pop-container">
+    <image class="popup-icon" src="../../images/popup/bluetooth.png" mode="widthFix"></image>
+    <view class="pop-content">使用前请打开蓝牙！</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="checkBluetooth">确定</view>
+    </view>
+  </view>
+</popup>
+<!-- 输入设备号的弹框 -->
+<popup show="{{ deviceDialog }}" bindclose="toggleDeviceDialog">
+  <view class="pop-container">
+    <input placeholder="请输入设备号" type='number' maxlength='6' class="pop-input" bindinput="setDeviceNum" focus="{{focus}}"></input>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="submitDeviceNum">确定</view>
+    </view>
+  </view>
+</popup>
+<!-- 警告提示框 -->
+<popup show="{{ alertDialog }}" bindclose="toggleAlertDialog">
+  <view class="pop-container">
+
+    <view class="title" wx:if="{{!alertIcon}}">温馨提示</view>
+    <view class="pop-content">{{alertText}}</view>
+    <view class="btn-w">
+      <view class="pop-btn-primary pop-btn-single" bindtap="toggleAlertDialog">确定</view>
+    </view>
+  </view>
+</popup>

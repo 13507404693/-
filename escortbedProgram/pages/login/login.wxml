@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="user">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="name">
+    <open-data type="userNickName" lang="zh_CN"></open-data>
+  </view>
+</view>
+<view class="form">
+  <view class="item">
+    <view class="label">手机号码</view>
+    <view class="input">
+      <input placeholder="请输入手机号码" type="number" maxlength='11' bindinput="setPhone"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="label">验证码</view>
+    <view class="input">
+      <input placeholder="请输入验证码" type="number" maxlength='4' bindinput="setCode"></input>
+      <view class="btn" bindtap="getCode">{{codeText}}</view>
+    </view>
+  </view>
+  <button class="btn-primary btn-login" hover-class='none' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="doBind">完成绑定</button>
+</view>
+<view class="tip">首次使用请先绑定手机号码</view>

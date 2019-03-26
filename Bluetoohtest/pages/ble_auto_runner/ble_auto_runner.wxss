@@ -1,0 +1,30 @@
+/* pages/bleEquipment/bleEquipment.wxss */
+.bg_fxd{
+  background: #fff;
+  position:fixed;
+  width: 600rpx;
+  height: 500rpx;
+  padding:40rpx;
+  border-radius:10rpx;
+  left:340rpx;
+  margin-left:-300rpx;
+  top:300rpx;
+  margin-top:-50rpx; 
+  }
+  .pr_top15{position:relative;top:15rpx;}
+
+  .f_30{font-size:30rpx;}
+
+  .input_border{border:1px solid #999;border-radius:10rpx;padding:10rpx;}
+
+.flex_btw{display: flex;justify-content: space-between}
+.flex_center{display: flex; align-items:center;justify-content:center;}
+
+.mg_10_0{margin:30rpx 0px;}
+
+.bthbg{background:#4ab134;color:#fff;border-radius:5px;margin-top:60rpx; }
+
+.pd_30{padding:30rpx;}
+.f_30{font-size:30rpx;padding-bottom:20rpx;}
+.nav_title{color:#4ab134;font-weight:400;}
+.chenbox > label{padding-left:10rpx;}

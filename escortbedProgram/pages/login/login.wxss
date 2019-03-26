@@ -1,0 +1,55 @@
+/* pages/login/login.wxss */
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 50rpx auto 20rpx;
+  box-shadow: 0 0 20rpx 4rpx #4ab134;
+}
+.name{
+  text-align: center;
+  color: #212121;
+  font-size: 24rpx;
+}
+.form{
+  padding: 0 50rpx;
+}
+.form .label{
+  font-size: 28rpx;
+  color: #212121;
+  padding: 60rpx 0 20rpx;
+}
+.form .input{
+  display: flex;
+  border-bottom: 1rpx solid #d1d1d1;
+  align-items: center;
+}
+.form .input input{
+  font-size: 28rpx;
+  flex: 1;
+  height: 68rpx;
+}
+.form .input .btn{
+  width: 200rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  color: #4ab134;
+  font-size: 26rpx;
+  border-left: 1rpx solid #4ab134;
+  text-align: center;
+}
+.btn-login{
+  margin: 100rpx 0 0 0;
+  padding: 0;
+  border: none;
+}
+.btn-login::after{
+  border: none;
+}
+.tip{
+  text-align: center;
+  margin: 40rpx 0;
+  color: #4ab134;
+  font-size: 24rpx;
+}

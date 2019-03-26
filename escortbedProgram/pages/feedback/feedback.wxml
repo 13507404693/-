@@ -1,0 +1,67 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="banner-w">
+  <view class="banner">
+    <image src="../../images/feedback/banner.png" mode="widthFix"></image>
+  </view>
+</view>
+<view class="gray-w">
+  <input class="head" bindinput="setDeviceNum" type='number' maxlength='6' value="{{deviceNum}}" placeholder="扫描二维码或输入设备编号"></input>
+  <image src="../../images/feedback/scan.png" mode="widthFix" class="foot icon-scan" bindtap="scan"></image>
+</view>
+<view class="title must">请选择问题类型</view>
+<view class="type-list">
+  <view wx:for="{{ typeArr }}" wx:key="index" class="{{ item.selected ? 'active' : '' }}" data-index='{{ index }}' bindtap="selectType">
+    <view class="type">
+      <image src="../../images/feedback/{{ item.icon }}.png" mode="widthFix"></image>
+    </view>
+    <view class="type-name">{{ item.name }}</view>
+  </view>
+</view>
+<view wx:if="{{ moreState }}">
+  <view class="title">请选择问题描述</view>
+
+     <view bindtap='picker' class="picker gray-w">
+      <view class="head">{{index}}</view>
+      <image src="../../images/r.png" mode="widthFix" class="foot icon-right"></image>
+    </view>
+  <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker gray-w">
+      <view class="head">{{array[index]}}</view>
+      <image src="../../images/r.png" mode="widthFix" class="foot icon-right"></image>
+    </view>
+  </picker> -->
+  <view class="memo" wx:if="{{plrce}}">
+    <textarea placeholder="请输入问题描述" wx:if="{{}}" bindinput="setDes"></textarea>
+    <textarea placeholder="请输入问题描述" wx:else value='{{des}}' bindinput="setDes"></textarea>
+  </view>
+  
+  <view class="photo" bindtap="chooseImg" wx:if="{{ !errImgUrl }}">
+    <view class="icon-add"></view>
+    <view>添加照片</view>
+  </view>
+  <view wx:else class="photo-has">
+    <view class="photo-del" bindtap="delImg"></view>
+    <image src="{{errImgUrl}}" mode="aspectFill"></image>
+  </view>
+</view>
+<view class="btn-w {{ moreState ? '' : 'btn-margin'}}">
+  <view class="btn-primary" bindtap="submitFeedback">提交反馈</view>
+</view>
+
+<view class=' {{funk==true?"mack":""}}' style='display:none;' > 
+
+     <view class='mackbg'>
+      <view class='flex w_120' catchtap='returni'>
+        <image src="../../images/r.png" mode="widthFix" class="img_wh16 pr_top10"></image>
+        <view class='f_30 pd_lefe10 c_99'>返回</view>
+      </view>
+    </view>
+
+    <view class='f_30 hiden' >
+      <view class='pd_20  flex_between'  catchtap='feedblackval' wx:for="{{array}}" data-val="{{item}}">
+        <view>{{item}}</view>
+        <image src="../../images/r.png" mode="widthFix" class="pr_top10 img_wh16s"></image>  
+      </view>
+    </view>
+
+</view>

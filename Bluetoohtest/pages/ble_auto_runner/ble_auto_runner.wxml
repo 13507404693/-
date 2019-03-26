@@ -1,0 +1,50 @@
+
+<view class='pd_30'> 
+  <view class='nav_title'>设备号</view>
+  <checkbox-group class="chenbox" bindchange="checkboxChange">
+  
+    <label class="checkbox" wx:for="{{equipmentlist}}" wx:key="index">
+    <view>
+      <checkbox value="{{item.mac_addr}}" checked="{{item.checked}}" />
+      {{item.dev_id}} --- mac:{{item.mac_addr}}
+      </view>
+    </label>
+
+
+  </checkbox-group>
+
+  <view> 
+      <view class='flex_btw mg_10_0'>
+      <view class='pr_top15'>开关锁次数</view>
+      <view><input name="UnlockTime" bindinput="much" type='number' class='input_border' placeholder="请输入开关锁次数" /> </view>
+    </view>
+     <button  bindtap='startest'  class='bthbg'>开始测试</button>
+  </view>
+<view>
+<view>设备平台：{{model}}</view>
+<view>设备系统：{{system}}</view>
+
+<view>测试结果请在后台观看</view>
+</view>
+
+</view>
+
+<popup show="{{alertDialog}}">
+  <view class="bg_fxd f_30" >
+    <view class='flex_btw mg_10_0'>
+      <view class='pr_top15'>开锁力度</view>
+      <view><input name="UnlockTime" bindinput="intensity" value="{{intensity}}" type='number' class='input_border' placeholder="请输入开锁力度" /> </view>
+    </view>
+
+    <view class='flex_btw mg_10_0'>
+      <label class=' pr_top15'>开锁时间:</label>
+      <input name="closeUnlockTime" bindinput='openTime' value="{{openTime}}" type='number' class='input_border' placeholder="请输入时间的高位" />
+    </view>
+
+    <view class='flex_btw mg_10_0'>
+      <label class=' pr_top15'>关锁时间:</label>
+      <input name="Unlock" type='number' bindinput='closeTime' value="{{closeTime}}" class='input_border' placeholder="请输入时间的低位" />
+    </view>
+      <button  bindtap='alertDialog'  class='bthbg'>确定</button>
+  </view>
+</popup>

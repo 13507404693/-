@@ -1,0 +1,91 @@
+/* pages/order/order.wxss */
+page{
+  background: #f5f5f5;
+}
+.card{
+  background: #fff;
+  display: flex;
+  margin: 28rpx;
+  box-shadow: 0px 0px 20rpx #ccc;
+  align-items: center;
+  height: 260rpx;
+}
+.card>view{
+  width: 50%;
+  text-align: center;
+}
+.card .describe{
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.card .num{
+  font-size: 26rpx;
+  color: #4ab134;
+}
+.card .num text{
+  font-size: 52rpx;
+}
+.card .money{
+  font-size: 26rpx;
+  color: #ea5810;
+}
+.card .money text{
+  font-size: 52rpx;
+}
+.list{
+  overflow: hidden;
+}
+.list .item{
+  background: #fff;
+  padding: 20rpx;
+  line-height: 56rpx;
+  margin: 0 20rpx 20rpx;
+  position: relative;
+}
+.list .item .title{
+  font-size: 32rpx;
+  color: #212121;
+}
+.list .item .line{
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+  padding-left: 18rpx;
+}
+.list .item .line::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 100%;
+  top: 50%;
+  margin-top: -3rpx;
+  left: 3rpx;
+}
+.list .item .line.green::before{
+  background: #4ab134;
+}
+.list .item .line.orange::before{
+  background: #ea5810;
+}
+.list .item .line.yellow::before{
+  background: #feDf0f;
+}
+.list .item .money{
+  position: absolute;
+  font-size: 24rpx;
+  color: #212121;
+  right:50rpx;
+  top:100rpx;
+}
+.list .item .money text{
+  font-size: 44rpx;
+}
+.scroll-list{
+  position: absolute;
+  top: 316rpx;
+  bottom: 0rpx;
+}
+.w_244h_144{width:282rpx;height:188rpx;margin-top:172rpx;}

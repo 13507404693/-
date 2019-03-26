@@ -1,0 +1,46 @@
+/* pages/ble/ble.wxss */
+ .pop-input{
+  width: 66%;
+  background: #f2f2f2;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  height: 80rpx;
+  border: 1px solid  #4ab134;
+  }
+
+  .btn-w{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.pt20{margin-top:10px}
+.pop-btn-single{
+  width: 230rpx;
+}
+
+.bthmg{margin-left:117px;
+margin-top:40px;
+}
+
+.pr_top15{position:relative;top:15rpx;}
+
+.f_18{font-size: 36rpx;}
+
+.pop-btn-primary{
+  width: 200rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #4ab134;
+  color: #fff;
+}
+
+.fd{position:fixed;width:100%;height:740rpx;background:#000;opacity:0.9;z-index:999;}
+.pr_top30{margin-top:60rpx;}

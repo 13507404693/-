@@ -1,0 +1,136 @@
+/* pages/pledge/pledge.wxss */
+page{
+  background: #f5f5f5;
+}
+.card{
+  width: 100vw;
+  height: 360rpx;
+  background-image: linear-gradient(45deg, #5bd242 0%, #4cd573 100%);
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.card::before{
+  content: "";
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  border: 16rpx solid #fff;
+  opacity: .8;
+  border-radius: 100%;
+  left: -140rpx;
+  bottom: -42rpx;
+}
+.card::after{
+  content: "";
+  position: absolute;
+  width: 260rpx;
+  height: 260rpx;
+  border: 24rpx solid #fff;
+  opacity: .8;
+  border-radius: 100%;
+  right: -140rpx;
+  top: -92rpx;
+}
+.card .title{
+  font-size: 30rpx;
+  margin: 40rpx 0 0rpx;
+}
+.card .money{
+  font-size: 26rpx;
+}
+.card .money text{
+  font-size: 80rpx;
+}
+.card .btn{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #212121;
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .2);
+}
+.card .pledge-explain{
+  font-size: 30rpx;
+  color: #167503;
+}
+.record-title{
+  background: #fff;
+  margin: 22rpx 26rpx 0;
+  font-size: 32rpx;
+  color: #212121;
+  line-height: 28rpx;
+  padding: 26rpx 20rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  border-bottom: 1rpx dashed #d1d1d1;
+  position: relative;
+}
+.record-title::before{
+  content: "";
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  background: #f5f5f5;
+  position: absolute;
+  left: -10rpx;
+  bottom: -10rpx;
+  border-radius: 100%;
+  z-index: 9;
+}
+.record-title::after{
+  content: "";
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  background: #f5f5f5;
+  position: absolute;
+  right: -10rpx;
+  bottom: -10rpx;
+  border-radius: 100%;
+  z-index: 9;
+}
+.record{
+  background: #fff;
+  margin: 0 26rpx;
+  border-radius: 0 0 20rpx 20rpx;
+  line-height: 46rpx;
+  padding-bottom: 26rpx;
+}
+.record .item{
+  position: relative;
+  padding: 26rpx 36rpx 0;
+}
+.record .item::before{
+  content: "";
+  position: absolute;
+  width: 6rpx;
+  height: 6rpx;
+  background: red;
+  border-radius: 100%;
+  top: 46rpx;
+  left: 20rpx;
+}
+.record .item .date{
+  font-size: 32rpx;
+  color: #212121;
+}
+.record .item .describe{
+  font-size: 30rpx;
+  color: #666;
+}
+.no-data{
+  padding-top: 20rpx;
+}
+.pop-content.pop-p{
+  text-align: left;
+  text-indent: 2em;
+  padding: 0 10rpx;
+  line-height: 52rpx;
+}
+
+.gray{background:'#c5c8ce' !important;}

@@ -1,0 +1,50 @@
+/* pages/detail/detail.wxss */
+
+.right{text-align:right}
+
+.main .w129h38 {
+  width: 225rpx !important;
+  height: 52rpx;
+  display: inline-block !important;
+}
+
+ .w309h230{
+  width: 309rpx!important;
+  height: 230rpx;
+}
+
+.wh_120{width:50rpx;height:50rpx;}
+
+.mag_btom140 {
+  margin-bottom: 140rpx;
+}
+
+.pd22 {
+  padding-left: 22rpx;
+  padding-right: 22rpx;
+}
+
+.pd_top20 {
+  padding-top: 22rpx;
+}
+
+.pdleft50_top20 {
+  padding-left: 50rpx;
+  padding-top: 22rpx;
+}
+
+.f_32 {
+  font-size: 30rpx;
+}
+.f_28 {
+  font-size: 28rpx;
+}
+.f_48 {
+  font-size: 48rpx;
+}
+
+.c_e58 {
+  color: #ea5810;
+}
+
+.c_4a{color:#4ab134}
